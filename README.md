@@ -3,6 +3,16 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Initialize Docker
+
+Map ports and create a volume to reference the folder that contains the files being modified in development
+```sh
+docker build .t
+docker run -p <host_port>:<container_port> -v /node_modules -v $(pwd):/app <image_id>
+```
+
+All the input parameters passed to docker compose can be passed directly via docker compose
+
 ## Available Scripts
 
 In the project directory, you can run:
