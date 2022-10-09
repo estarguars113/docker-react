@@ -1,0 +1,21 @@
+version: '3'
+services:
+  react-app: # main app, runs default command
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - /app/node_modules
+      - .:/app
+  node-tests: # this solution has the disadvantage that this second service is not possible to access and interact, as the attach only works in the main process running in the container
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /app/node_modules
+      - .:/app
+    command: ["npm", "run", "start"]
+
+
