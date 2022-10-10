@@ -1,0 +1,16 @@
+sudo: required
+services:
+  - docker
+language: node_js
+node_js:
+  - 16
+cache:
+  directories:
+    - node_modules
+
+before_install:
+  - docker build -t estarguars113/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true estarguars113/docker-react npm run test -- --coverage
+  
