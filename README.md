@@ -13,7 +13,7 @@ docker run -p <host_port>:<container_port> -v /node_modules -v $(pwd):/app <imag
 
 ## Deployment
 
-Using travis CI tool
+Using travis CI tool, to execute the tests using the dev docker image
 
 All the input parameters passed to docker compose can be passed directly via docker compose
 
