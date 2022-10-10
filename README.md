@@ -11,6 +11,10 @@ docker build .t
 docker run -p <host_port>:<container_port> -v /node_modules -v $(pwd):/app <image_id>
 ```
 
+## Deployment
+
+Using travis CI tool
+
 All the input parameters passed to docker compose can be passed directly via docker compose
 
 ## Available Scripts
