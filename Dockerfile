@@ -11,6 +11,7 @@ RUN npm run build
 
 # create final stage with ngnix and copy the files required from node stage
 FROM  nginx
-
+# indicates the deployment tool(like beanstalk) what port to map
+EXPOSE 80
 # from the previous stage, we get the build folder previously create /
 COPY --from=builder /app/build /usr/share/ngnix/html
